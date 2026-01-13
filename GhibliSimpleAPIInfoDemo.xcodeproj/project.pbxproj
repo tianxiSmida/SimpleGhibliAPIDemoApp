@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A888B0924255A8D32169064 /* Pods_GhibliSimpleAPIInfoDemo_GhibliSimpleAPIInfoDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 750EBE18A1A11D12004E30E2 /* Pods_GhibliSimpleAPIInfoDemo_GhibliSimpleAPIInfoDemoUITests.framework */; };
+		414D99DC619F89A71CDA36BB /* Pods_GhibliSimpleAPIInfoDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5843C3B90D664141780FBEEB /* Pods_GhibliSimpleAPIInfoDemoUITests.framework */; };
 		730B902E18DD246E4E7ABF60 /* Pods_GhibliSimpleAPIInfoDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4310FA99497D57AA746EEF /* Pods_GhibliSimpleAPIInfoDemoTests.framework */; };
 		CBD31F57C5ABBFF39F26A715 /* Pods_GhibliSimpleAPIInfoDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E761755D5E9A1C42DB11B8FC /* Pods_GhibliSimpleAPIInfoDemo.framework */; };
 /* End PBXBuildFile section */
@@ -32,12 +32,14 @@
 /* Begin PBXFileReference section */
 		00A11CE48BA017D7A9DF30BD /* Pods-GhibliSimpleAPIInfoDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhibliSimpleAPIInfoDemo.release.xcconfig"; path = "Target Support Files/Pods-GhibliSimpleAPIInfoDemo/Pods-GhibliSimpleAPIInfoDemo.release.xcconfig"; sourceTree = "<group>"; };
 		0F4CF1D0ED38D68E3F9DE628 /* Pods-GhibliSimpleAPIInfoDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhibliSimpleAPIInfoDemo.debug.xcconfig"; path = "Target Support Files/Pods-GhibliSimpleAPIInfoDemo/Pods-GhibliSimpleAPIInfoDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		750EBE18A1A11D12004E30E2 /* Pods_GhibliSimpleAPIInfoDemo_GhibliSimpleAPIInfoDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhibliSimpleAPIInfoDemo_GhibliSimpleAPIInfoDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5843C3B90D664141780FBEEB /* Pods_GhibliSimpleAPIInfoDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhibliSimpleAPIInfoDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		756695BCC80D088E494C9D48 /* Pods-GhibliSimpleAPIInfoDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhibliSimpleAPIInfoDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-GhibliSimpleAPIInfoDemoUITests/Pods-GhibliSimpleAPIInfoDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CC10DFCC3932E0DDEC005D72 /* Pods-GhibliSimpleAPIInfoDemo-GhibliSimpleAPIInfoDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhibliSimpleAPIInfoDemo-GhibliSimpleAPIInfoDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-GhibliSimpleAPIInfoDemo-GhibliSimpleAPIInfoDemoUITests/Pods-GhibliSimpleAPIInfoDemo-GhibliSimpleAPIInfoDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D2352CCE4A7D5DD6876A5B1D /* Pods-GhibliSimpleAPIInfoDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhibliSimpleAPIInfoDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-GhibliSimpleAPIInfoDemoTests/Pods-GhibliSimpleAPIInfoDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC7513E8AD93FE575306A786 /* Pods-GhibliSimpleAPIInfoDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhibliSimpleAPIInfoDemoTests.release.xcconfig"; path = "Target Support Files/Pods-GhibliSimpleAPIInfoDemoTests/Pods-GhibliSimpleAPIInfoDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		E761755D5E9A1C42DB11B8FC /* Pods_GhibliSimpleAPIInfoDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhibliSimpleAPIInfoDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4310FA99497D57AA746EEF /* Pods_GhibliSimpleAPIInfoDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhibliSimpleAPIInfoDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF242C6AC1A70E15779A837F /* Pods-GhibliSimpleAPIInfoDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhibliSimpleAPIInfoDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-GhibliSimpleAPIInfoDemoUITests/Pods-GhibliSimpleAPIInfoDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F14C34F42F14C63300D335E2 /* GhibliSimpleAPIInfoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhibliSimpleAPIInfoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14C350D2F14C63500D335E2 /* GhibliSimpleAPIInfoDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GhibliSimpleAPIInfoDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14C35172F14C63500D335E2 /* GhibliSimpleAPIInfoDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GhibliSimpleAPIInfoDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,11 +67,15 @@
 		};
 		F14C35102F14C63500D335E2 /* GhibliSimpleAPIInfoDemoTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = GhibliSimpleAPIInfoDemoTests;
 			sourceTree = "<group>";
 		};
 		F14C351A2F14C63500D335E2 /* GhibliSimpleAPIInfoDemoUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = GhibliSimpleAPIInfoDemoUITests;
 			sourceTree = "<group>";
 		};
@@ -96,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A888B0924255A8D32169064 /* Pods_GhibliSimpleAPIInfoDemo_GhibliSimpleAPIInfoDemoUITests.framework in Frameworks */,
+				414D99DC619F89A71CDA36BB /* Pods_GhibliSimpleAPIInfoDemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,8 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				E761755D5E9A1C42DB11B8FC /* Pods_GhibliSimpleAPIInfoDemo.framework */,
-				750EBE18A1A11D12004E30E2 /* Pods_GhibliSimpleAPIInfoDemo_GhibliSimpleAPIInfoDemoUITests.framework */,
 				EA4310FA99497D57AA746EEF /* Pods_GhibliSimpleAPIInfoDemoTests.framework */,
+				5843C3B90D664141780FBEEB /* Pods_GhibliSimpleAPIInfoDemoUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,6 +128,8 @@
 				FB9CFD1B47946DC0E31C4B17 /* Pods-GhibliSimpleAPIInfoDemo-GhibliSimpleAPIInfoDemoUITests.release.xcconfig */,
 				D2352CCE4A7D5DD6876A5B1D /* Pods-GhibliSimpleAPIInfoDemoTests.debug.xcconfig */,
 				DC7513E8AD93FE575306A786 /* Pods-GhibliSimpleAPIInfoDemoTests.release.xcconfig */,
+				EF242C6AC1A70E15779A837F /* Pods-GhibliSimpleAPIInfoDemoUITests.debug.xcconfig */,
+				756695BCC80D088E494C9D48 /* Pods-GhibliSimpleAPIInfoDemoUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -203,7 +211,6 @@
 				F14C35132F14C63500D335E2 /* Sources */,
 				F14C35142F14C63500D335E2 /* Frameworks */,
 				F14C35152F14C63500D335E2 /* Resources */,
-				D4E6A398062F525F28861693 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -324,7 +331,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GhibliSimpleAPIInfoDemo-GhibliSimpleAPIInfoDemoUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-GhibliSimpleAPIInfoDemoUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -353,27 +360,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D4E6A398062F525F28861693 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GhibliSimpleAPIInfoDemo-GhibliSimpleAPIInfoDemoUITests/Pods-GhibliSimpleAPIInfoDemo-GhibliSimpleAPIInfoDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GhibliSimpleAPIInfoDemo-GhibliSimpleAPIInfoDemoUITests/Pods-GhibliSimpleAPIInfoDemo-GhibliSimpleAPIInfoDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GhibliSimpleAPIInfoDemo-GhibliSimpleAPIInfoDemoUITests/Pods-GhibliSimpleAPIInfoDemo-GhibliSimpleAPIInfoDemoUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DE9FDF5DFC68E97EC217422C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -382,13 +368,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GhibliSimpleAPIInfoDemo/Pods-GhibliSimpleAPIInfoDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GhibliSimpleAPIInfoDemo/Pods-GhibliSimpleAPIInfoDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -652,7 +634,7 @@
 		};
 		F14C35292F14C63500D335E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC10DFCC3932E0DDEC005D72 /* Pods-GhibliSimpleAPIInfoDemo-GhibliSimpleAPIInfoDemoUITests.debug.xcconfig */;
+			baseConfigurationReference = EF242C6AC1A70E15779A837F /* Pods-GhibliSimpleAPIInfoDemoUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -669,7 +651,7 @@
 		};
 		F14C352A2F14C63500D335E2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB9CFD1B47946DC0E31C4B17 /* Pods-GhibliSimpleAPIInfoDemo-GhibliSimpleAPIInfoDemoUITests.release.xcconfig */;
+			baseConfigurationReference = 756695BCC80D088E494C9D48 /* Pods-GhibliSimpleAPIInfoDemoUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
