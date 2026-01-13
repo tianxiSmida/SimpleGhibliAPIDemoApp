@@ -30,7 +30,7 @@ extension GBLAPIServer.Request: TargetType {
     }
     
     var method: Moya.Method {
-        return .post
+        return .get
     }
     
     var task: Task {
