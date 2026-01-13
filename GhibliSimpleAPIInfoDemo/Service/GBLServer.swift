@@ -21,7 +21,7 @@ class GBLServer {
     }
     
     // MARK: Request
-    func fetchFilms() -> Single<[Film]> {
+    func fetchFilms() -> Single<[GBLFilm]> {
         request(.films)
     }
 }

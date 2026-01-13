@@ -38,7 +38,7 @@ extension GBLAPIServer.Request: TargetType {
     }
     
     var headers: [String : String]? {
-        var header = [
+        let header = [
             "Accept": "application/x-protobuf;charset=UTF-8, text/plain, application/xml, application/json, application/*+json, */*",
             "Content-Type": "application/x-protobuf;charset=UTF-8"
         ]
