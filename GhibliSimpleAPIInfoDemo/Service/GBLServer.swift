@@ -43,7 +43,7 @@ class GBLServer {
     }
     
     // MARK: Request
-    func fetchFilms() -> Single<Film> {
+    func fetchFilms() -> Single<[Film]> {
         request(.films)
     }
     
@@ -77,11 +77,11 @@ class GBLServer {
             request = Observable.error(GBLError.server.noInternetConnection).asSingle()
         }
         
-        return request.map {
+        return request.map { resp in
             do {
-                return try JSONDecoder().decode(T.self, from: $0.data)
+                return try JSONDecoder().decode(T.self, from: resp.data)
             } catch {
-                throw GBLError.model.convertModelFailed(description: String(describing: T.self))
+                throw GBLError.model.convertModelFailed(description: "Convert \(String(describing: T.self)) Fail, \(error)")
             }
         }
     }
