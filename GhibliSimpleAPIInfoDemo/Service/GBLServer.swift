@@ -20,7 +20,14 @@ class GBLServer {
         self.monitor = monitor
     }
     
-    private func setupProvider() -> MoyaProvider<GBLAPIServer.Request> {
+    // MARK: Request
+    func fetchFilms() -> Single<[Film]> {
+        request(.films)
+    }
+}
+
+private extension GBLServer {
+    func setupProvider() -> MoyaProvider<GBLAPIServer.Request> {
         let session = createSession()
         var plugins: [PluginType] = []
         
@@ -42,12 +49,7 @@ class GBLServer {
         )
     }
     
-    // MARK: Request
-    func fetchFilms() -> Single<[Film]> {
-        request(.films)
-    }
-    
-    private func request<T: Codable>(_ req: GBLAPIServer.Request) -> Single<T> {
+    func request<T: Codable>(_ req: GBLAPIServer.Request) -> Single<T> {
         
         var request: Single<Response> = provider.rx.request(req)
             .filterSuccessfulStatusCodes()
@@ -85,9 +87,7 @@ class GBLServer {
             }
         }
     }
-}
-
-private extension GBLServer {
+    
     func createSession() -> Session {
         let configuration = URLSessionConfiguration.default
         configuration.headers = [.defaultAcceptEncoding, .defaultAcceptLanguage]
