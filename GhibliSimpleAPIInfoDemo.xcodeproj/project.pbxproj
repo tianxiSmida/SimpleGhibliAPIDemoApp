@@ -67,15 +67,11 @@
 		};
 		F14C35102F14C63500D335E2 /* GhibliSimpleAPIInfoDemoTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = GhibliSimpleAPIInfoDemoTests;
 			sourceTree = "<group>";
 		};
 		F14C351A2F14C63500D335E2 /* GhibliSimpleAPIInfoDemoUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = GhibliSimpleAPIInfoDemoUITests;
 			sourceTree = "<group>";
 		};
@@ -368,9 +364,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GhibliSimpleAPIInfoDemo/Pods-GhibliSimpleAPIInfoDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GhibliSimpleAPIInfoDemo/Pods-GhibliSimpleAPIInfoDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
