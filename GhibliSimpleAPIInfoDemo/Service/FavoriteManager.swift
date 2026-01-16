@@ -52,7 +52,7 @@ class FavoriteManager {
         )
     }
     
-    private func hasInFavoriteList(_ id: String) -> Bool {
+    func hasInFavoriteList(_ id: String) -> Bool {
         return favorityListSubject.value.contains(id)
     }
 }
