@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import RxRelay
 
 class FavoriteManager {
     
@@ -16,23 +17,31 @@ class FavoriteManager {
     
     private let storage: GBLDataStorageProtocol
     private let changeSubject: PublishSubject<(String, FavoriteManager.Operation)> = .init()
-    private var favorityList: [String]
+    private let favorityListSubject: BehaviorRelay<[String]> = .init(value: [])
+    
+    var favorityList: Observable<[String]> {
+        return favorityListSubject.asObservable()
+    }
     
     init(storage: GBLDataStorageProtocol) {
         self.storage = storage
-        self.favorityList = storage.load()
+        self.favorityListSubject.accept(storage.load())
     }
     
     func addToFavorite(id: String) {
-        favorityList.append(id)
+        var newFavorityList: [String] = favorityListSubject.value
+        newFavorityList.append(id)
+        favorityListSubject.accept(newFavorityList)
         changeSubject.onNext((id, .add))
-        storage.save(favorityList)
+        storage.save(favorityListSubject.value)
     }
     
     func removeToFavorite(id: String) {
-        favorityList.removeAll(where: { $0 == id })
+        var newFavorityList: [String] = favorityListSubject.value
+        newFavorityList.removeAll(where: { $0 == id })
+        favorityListSubject.accept(newFavorityList)
         changeSubject.onNext((id, .remove))
-        storage.save(favorityList)
+        storage.save(favorityListSubject.value)
     }
     
     /// return isInFavoriteList
@@ -44,6 +53,6 @@ class FavoriteManager {
     }
     
     private func hasInFavoriteList(_ id: String) -> Bool {
-        return favorityList.contains(id)
+        return favorityListSubject.value.contains(id)
     }
 }
