@@ -24,7 +24,7 @@ class ApplicationCoordinator: BaseCoordinator {
     private func runMainFlow() {
         let mainFlow = MainCoordinator(router: router,
                                        apiManager: apiManager,
-                                       storage: dataStorage)
+                                       favoriteManager: FavoriteManager(storage: dataStorage))
         addDependency(mainFlow)
         mainFlow.start()
     }

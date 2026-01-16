@@ -10,11 +10,14 @@ import UIKit
 class MainCoordinator: BaseCoordinator {
     let router: Router
     let apiManager: APIManager
-    let storage: GBLDataStorageProtocol
+    let favoriteManager: FavoriteManager
     
-    init(router: Router, apiManager: APIManager, storage: GBLDataStorageProtocol) {
+    lazy var provider = FilmsProvider(apiManager: apiManager,
+                                      favoriteManager: favoriteManager)
+    
+    init(router: Router, apiManager: APIManager, favoriteManager: FavoriteManager) {
         self.apiManager = apiManager
-        self.storage = storage
+        self.favoriteManager = favoriteManager
         self.router = router
     }
     
