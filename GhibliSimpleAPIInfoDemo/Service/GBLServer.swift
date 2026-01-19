@@ -30,7 +30,9 @@ private extension GBLServer {
     func setupProvider() -> MoyaProvider<GBLAPIServer.Request> {
         let session = createSession()
         var plugins: [PluginType] = []
-        
+#if DEBUG
+        plugins.append(GBLNetworkLog())
+#endif
         plugins.append(CachePolicyPlugin())
         
         return MoyaProvider<GBLAPIServer.Request>(
