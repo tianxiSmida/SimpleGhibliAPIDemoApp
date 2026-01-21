@@ -62,3 +62,14 @@ private extension APIManager {
             }
     }
 }
+
+extension APIManager {
+    func mockFetchFilms() -> Single<[Film]> {
+        return .just([
+            .init(film: .sample1),
+            .init(film: .sample2)
+        ])
+            .delay(.seconds(1),
+                   scheduler: SerialDispatchQueueScheduler.init(qos: .background))
+    }
+}
