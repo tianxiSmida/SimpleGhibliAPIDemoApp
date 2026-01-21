@@ -10,6 +10,7 @@ target 'GhibliSimpleAPIInfoDemo' do
   pod 'RxCocoa', '6.5.0'
   pod 'SnapKit', '5.6.0'
   pod 'Moya/RxSwift', '15.0'
+  pod 'Kingfisher', '7.7.0'
   target 'GhibliSimpleAPIInfoDemoTests' do
     inherit! :search_paths
     # Pods for testing
