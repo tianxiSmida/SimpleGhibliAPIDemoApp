@@ -24,15 +24,45 @@ class MainCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        let filmListVM = FilmListViewModel(provider: provider.createFilmListProvider())
-        let vc = FilmListViewController(vm: filmListVM)
-        filmListVM.event.didSelected
-            .subscribe(onNext: showDetailFilmPage(vm:))
-            .disposed(by: disposeBag)
-        router.push(vc)
+        let filmListTab = createFilmListPageTab()
+        let favorityTab = createFavoriteListPageTab()
+        let tabBarVC = BaseTabBarViewController(tabs: [filmListTab, favorityTab])
+        
+        router.push(tabBarVC)
     }
     
-    func showDetailFilmPage(vm: FilmCellViewModel) {
+    func showDetailFilmPage(model: Film) {
+    }
+}
+
+private extension MainCoordinator {
+    func createFilmListPageTab() -> UITab {
+        let filmListVM = FilmListViewModel(provider: provider.createFilmListProvider())
+        let vc = FilmListViewController(vm: filmListVM)
         
+        filmListVM.event.didSelected
+            .subscribe(onNext: showDetailFilmPage(model:))
+            .disposed(by: disposeBag)
+        vc.title = "Ghibli Movies"
+        
+        return UITab(title: "Movies",
+                     image: UIImage(systemName: "movieclapper"),
+                     identifier: "Movies",
+                     viewControllerProvider: { _ in vc })
+    }
+    
+    func createFavoriteListPageTab() -> UITab {
+        let filmListVM = FilmListViewModel(provider: provider.createFavirateFilmListProvider())
+        let vc = FilmListViewController(vm: filmListVM)
+        
+        filmListVM.event.didSelected
+            .subscribe(onNext: showDetailFilmPage(model:))
+            .disposed(by: disposeBag)
+        vc.title = "Favorites"
+        
+        return UITab(title: "Favorites",
+                     image: UIImage(systemName: "heart.fill"),
+                     identifier: "Favorites",
+                     viewControllerProvider: { _ in vc })
     }
 }

@@ -29,9 +29,6 @@ class FilmListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
-        navigationItem.title = "Ghibli Movies"
         setupUI()
         bindData()
     }
