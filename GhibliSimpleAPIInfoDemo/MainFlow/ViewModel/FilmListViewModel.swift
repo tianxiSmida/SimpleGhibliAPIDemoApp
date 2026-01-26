@@ -21,10 +21,10 @@ class FilmListViewModel {
     }
     
     struct EventOutput {
-        let didSelected: Observable<FilmCellViewModel>
+        let didSelected: Observable<Film>
     }
     var event: EventOutput {
-        .init(didSelected: didSelectedSubject)
+        .init(didSelected: didSelectedSubject.map { $0.model })
     }
     
     private let provider: FilmsProviderProtocol

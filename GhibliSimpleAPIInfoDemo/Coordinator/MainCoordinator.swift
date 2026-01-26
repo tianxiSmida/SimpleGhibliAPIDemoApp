@@ -32,6 +32,10 @@ class MainCoordinator: BaseCoordinator {
     }
     
     func showDetailFilmPage(model: Film) {
+        let provider = FilmDetailProvider(favoriteManager: favoriteManager, apiManager: apiManager)
+        let vm = FilmDetailViewModel(provider: provider, model: model)
+        let detailVC = FilmDetailViewController(vm: vm)
+        router.push(detailVC)
     }
 }
 

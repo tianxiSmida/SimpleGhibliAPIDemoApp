@@ -18,19 +18,13 @@ class FilmCellViewModel {
         let isFavorite: Observable<Bool>
         let id: String
         let title: String
-        let description: String
         let director: String
-        let producer: String
         let releaseYear: String
-        let score: String
-        let duration: String
         let image: String
-        let bannerImage: String
-        let people: [String]
     }
     
+    let model: Film
     private let favoriteManager: FavoriteManager
-    private let model: Film
     private let isFavoriteRelay: BehaviorRelay<Bool>
     private let disposeBag = DisposeBag()
     private var actionDisposeBag = DisposeBag()
@@ -63,15 +57,9 @@ class FilmCellViewModel {
             isFavorite: isFavoriteRelay.asObservable(),
             id: model.id,
             title: model.title,
-            description: model.description,
             director: model.director,
-            producer: model.producer,
             releaseYear: model.releaseYear,
-            score: model.description,
-            duration: model.duration,
-            image: model.image,
-            bannerImage: model.bannerImage,
-            people: model.people
+            image: model.image
         )
     }
     
