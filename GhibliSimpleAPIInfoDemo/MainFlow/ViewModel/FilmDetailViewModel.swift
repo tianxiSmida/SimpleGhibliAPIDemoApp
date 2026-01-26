@@ -30,11 +30,17 @@ class FilmDetailViewModel {
         let isLoading: Observable<Bool>
     }
     
+    struct EventOutput {
+        let error: Observable<Error>
+    }
+    
     let model: Film
+    lazy var eventOutput: EventOutput = . init(error: errorRelay.asObservable())
     private let provider: FilmDetailProviderProtocol
     private let isFavoriteRelay: BehaviorRelay<Bool>
     private let peopleRelay: BehaviorRelay<[Person]> = .init(value: [])
     private let isLoadingRelay: BehaviorRelay<Bool> = .init(value: false)
+    private let errorRelay: PublishRelay<Error> = .init()
     private let disposeBag = DisposeBag()
     private var actionDisposeBag = DisposeBag()
     
@@ -95,13 +101,18 @@ class FilmDetailViewModel {
                 fetchAction($0.element).asObservable()
             })
         .do(
+            onError: { [weak self] error in
+                self?.errorRelay.accept(error)
+                self?.isLoadingRelay.accept(false)
+            },
             onCompleted: { [weak self] in
                 self?.isLoadingRelay.accept(false)
             }, onSubscribe: { [weak self] in
                 self?.isLoadingRelay.accept(true)
             }
         )
-        .bind(to: peopleRelay)
+        .asDriver(onErrorJustReturn: [])
+        .drive(peopleRelay)
         .disposed(by: disposeBag)
     }
 }

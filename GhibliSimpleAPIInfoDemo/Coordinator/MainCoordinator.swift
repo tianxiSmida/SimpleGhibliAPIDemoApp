@@ -35,6 +35,10 @@ class MainCoordinator: BaseCoordinator {
         let provider = FilmDetailProvider(favoriteManager: favoriteManager, apiManager: apiManager)
         let vm = FilmDetailViewModel(provider: provider, model: model)
         let detailVC = FilmDetailViewController(vm: vm)
+        vm.eventOutput.error
+            .observe(on: MainScheduler())
+            .subscribe(onNext: showErrorToast(error:))
+            .disposed(by: disposeBag)
         router.push(detailVC)
     }
 }
@@ -68,5 +72,14 @@ private extension MainCoordinator {
                      image: UIImage(systemName: "heart.fill"),
                      identifier: "Favorites",
                      viewControllerProvider: { _ in vc })
+    }
+}
+// MARK: Error Process
+private extension MainCoordinator {
+    func showErrorToast(error: Error) {
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancel)
+        router.present(alert)
     }
 }
