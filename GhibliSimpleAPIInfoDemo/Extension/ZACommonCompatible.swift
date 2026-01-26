@@ -1,5 +1,5 @@
 //
-//  AZCommonCompatible.swift
+//  ZACommonCompatible.swift
 //  GhibliSimpleAPIInfoDemo
 //
 //  定義命名空間, 用於區分/快速存取自訂方法
