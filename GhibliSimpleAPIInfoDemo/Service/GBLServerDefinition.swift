@@ -11,7 +11,7 @@ import Moya
 enum GBLAPIServer {
     enum Request {
         case films
-        case peoples
+        case people(id: String)
     }
 }
 
@@ -24,8 +24,8 @@ extension GBLAPIServer.Request: TargetType {
         switch self {
         case .films:
             return "/films"
-        case .peoples:
-            return "/peoples"
+        case .people(let id):
+            return "/people/\(id)"
         }
     }
     

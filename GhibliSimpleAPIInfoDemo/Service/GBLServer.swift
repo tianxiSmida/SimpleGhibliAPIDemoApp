@@ -24,6 +24,10 @@ class GBLServer {
     func fetchFilms() -> Single<[GBLFilm]> {
         request(.films)
     }
+    
+    func fetchPerson(id: String) -> Single<GBLPerson> {
+        request(.people(id: id))
+    }
 }
 
 private extension GBLServer {

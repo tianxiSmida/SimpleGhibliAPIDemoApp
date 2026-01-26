@@ -30,6 +30,12 @@ class APIManager {
                 }
             }
     }
+    
+    func fetchPerson(id: String) -> Single<Person> {
+        return server.fetchPerson(id: id)
+            .additionalTask(task: processConnectionErrorTask(resp:))
+            .map(Person.init(person:))
+    }
 }
 
 extension Single {
@@ -69,6 +75,14 @@ extension APIManager {
             .init(film: .sample1),
             .init(film: .sample2)
         ])
+            .delay(.seconds(1),
+                   scheduler: SerialDispatchQueueScheduler.init(qos: .background))
+    }
+    
+    func mockFetchPerson(id: String) -> Single<Person> {
+        return .just(
+            .init(person: [GBLPerson.sample1, GBLPerson.sample2].randomElement()!)
+        )
             .delay(.seconds(1),
                    scheduler: SerialDispatchQueueScheduler.init(qos: .background))
     }

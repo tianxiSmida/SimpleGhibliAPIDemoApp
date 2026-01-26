@@ -14,5 +14,6 @@ enum GBLError {
     
     enum model: Error, Equatable {
         case convertModelFailed(description: String)
+        case convertPersonIDError(url: String)
     }
 }
