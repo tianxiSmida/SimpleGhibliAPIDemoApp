@@ -56,6 +56,7 @@ class FilmListViewController: UIViewController {
                 cellType: cellType)
         ) { index, element, cell in
             cell.vm = element
+            cell.selectionStyle = .none
         }
         .disposed(by: disposeBag)
         // 點擊事件

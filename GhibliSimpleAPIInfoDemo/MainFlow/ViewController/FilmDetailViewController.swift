@@ -48,10 +48,10 @@ class FilmDetailViewController: UIViewController {
     private lazy var sepratorLineOnDesc: UIView = createSeperatorLine()
     private lazy var descriptionTitleLabel = createLable(str: "Description",
                                                          font: .systemFont(ofSize: 16, weight: .semibold),
-                                                         textColor: .black)
+                                                         textColor: .label)
     private lazy var descriptionInfoLabel = createLable(str: "",
                                                         font: .systemFont(ofSize: 16, weight: .regular),
-                                                        textColor: .black)
+                                                        textColor: .secondaryLabel)
     private lazy var sepratorLineBelowDesc: UIView = createSeperatorLine()
     
     private let edgeOfSubView: CGFloat = 10.za.scaleWidth
@@ -59,7 +59,7 @@ class FilmDetailViewController: UIViewController {
     init(vm: FilmDetailViewModel) {
         self.vm = vm
         super.init(nibName: nil, bundle: nil)
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
     }
     
     required init?(coder: NSCoder) {
@@ -112,7 +112,7 @@ class FilmDetailViewController: UIViewController {
     
     private func setupItemInfo(director: String, producer: String, releaseDate: String, runningTime: String, score: String) {
         let font = UIFont.systemFont(ofSize: 16.za.scaleWidth, weight: .regular)
-        let color = UIColor.black
+        let color = UIColor.secondaryLabel
         
         let directorInfo = createLable(str: director, font: font, textColor: color)
         let producerInfo = createLable(str: producer, font: font, textColor: color)
@@ -158,7 +158,7 @@ private extension FilmDetailViewController {
         }
         titleLabel.textAlignment = .left
         titleLabel.font = .systemFont(ofSize: 32.za.scaleWidth, weight: .bold)
-        titleLabel.textColor = .black
+        titleLabel.textColor = .label
     }
     
     func setupItemTitleStackView() {
@@ -168,7 +168,7 @@ private extension FilmDetailViewController {
             make.left.equalTo(titleLabel)
         }
         let font = UIFont.systemFont(ofSize: 16.za.scaleWidth, weight: .medium)
-        let color = UIColor.black
+        let color = UIColor.label
         
         let directorTitle = createLable(str: "Direct", font: font, textColor: color)
         let producerTitle = createLable(str: "Producer", font: font, textColor: color)

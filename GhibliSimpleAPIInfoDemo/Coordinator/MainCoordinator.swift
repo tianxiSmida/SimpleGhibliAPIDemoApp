@@ -38,10 +38,16 @@ class MainCoordinator: BaseCoordinator {
         let provider = FilmDetailProvider(favoriteManager: favoriteManager, apiManager: apiManager)
         let vm = FilmDetailViewModel(provider: provider, model: model)
         let detailVC = FilmDetailViewController(vm: vm)
+        
         vm.eventOutput.error
             .observe(on: MainScheduler())
             .subscribe(onNext: showErrorToast(error:))
             .disposed(by: disposeBag)
+        
+        settingsManager.theme
+            .subscribe(detailVC.rx.overrideUserInterfaceStyle)
+            .disposed(by: disposeBag)
+        
         router.push(detailVC)
     }
 }
@@ -55,6 +61,10 @@ private extension MainCoordinator {
             .subscribe(onNext: showDetailFilmPage(model:))
             .disposed(by: disposeBag)
         vc.title = "Ghibli Movies"
+        
+        settingsManager.theme
+            .subscribe(vc.rx.overrideUserInterfaceStyle)
+            .disposed(by: disposeBag)
         
         return UITab(title: "Movies",
                      image: UIImage(systemName: "movieclapper"),
@@ -70,6 +80,10 @@ private extension MainCoordinator {
             .subscribe(onNext: showDetailFilmPage(model:))
             .disposed(by: disposeBag)
         vc.title = "Favorites"
+        
+        settingsManager.theme
+            .subscribe(vc.rx.overrideUserInterfaceStyle)
+            .disposed(by: disposeBag)
         
         return UITab(title: "Favorites",
                      image: UIImage(systemName: "heart.fill"),
