@@ -26,7 +26,7 @@ class FilmsProvider {
     }
     
     func fetchFilms() -> Observable<[Film]> {
-        apiManager.mockFetchFilms()
+        apiManager.fetchFilms()
             .do(onSuccess: filmsSubject.accept(_:))
             .asObservable()
     }

@@ -26,10 +26,6 @@ class FilmDetailProvider: FilmDetailProviderProtocol {
             return .error(GBLError.model.convertPersonIDError(url: url))
         }
         let personID = personURL.lastPathComponent
-#if DEBUG
-        return apiManager.mockFetchPerson(id: personID)
-#else
         return apiManager.fetchPerson(id: personID)
-#endif
     }
 }
