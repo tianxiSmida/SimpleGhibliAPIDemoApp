@@ -57,7 +57,6 @@ class SettingsViewModel {
     func transform(input: Input) -> Output {
         let provider = self.provider
         input.appearanceSelected
-            .do(onNext: provider.saveAppearence(_:))
             .bind(to: appearanceRelay)
             .disposed(by: disposeBag)
         
@@ -89,8 +88,15 @@ class SettingsViewModel {
             .disposed(by: disposeBag)
 
         // 當外觀改變時也通知 TableView 重新整理以更新 Checkmark
-        appearanceRelay.mapToVoid()
+        appearanceRelay
+            .mapToVoid()
             .bind(to: reloadRelay)
+            .disposed(by: disposeBag)
+        
+        appearanceRelay
+            .distinctUntilChanged()
+            .skip(1)
+            .bind(onNext: provider.saveAppearence(_:))
             .disposed(by: disposeBag)
 
         return Output(
